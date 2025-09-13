@@ -1,6 +1,7 @@
 // const { Children } = require("react");
+const mainContainer = document.querySelector('#root');
 
-function customRender(reactElement, mainContainer){
+function customRender(reactElement, container){
     const domElement = document.createElement(reactElement.type);
     domElement.innerHTML = reactElement.children;
     domElement.setAttribute('href', reactElement.props.href);
@@ -8,7 +9,6 @@ function customRender(reactElement, mainContainer){
     container.appendChild(domElement);
 }
 
-const mainContainer = document.querySelector('#root');
 
 const reactElement = {
     type: 'a',
