@@ -37,12 +37,14 @@ const reactElement = React.createElement(
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   // Yup can run successfully 
-    // <MyApp />
-    // let's see if our custom element can run
-    // reactElement // Of course not as in the customReact file we also created a custom renderer for our
-                  // custom element and thus we were able to render it but in here the react has its own
-                  // render() function and we need to follow its syntax and other rules.
-
-    reactElement
+  <>
+    <MyApp />
+    {/* // let's see if our custom element can run
+      // Of course not as in the customReact file we also created a custom renderer for our
+      // custom element and thus we were able to render it but in here the react has its own
+      // render() function and we need to follow its syntax and other rules. */}
+      <p>Go Here Now! {reactElement}</p>
+    <App />
+    </>
   // </StrictMode>,
 )
