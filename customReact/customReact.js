@@ -11,7 +11,7 @@ function customRender(reactElement, container){
     */
 
     // this below is
-    // continuosly creates element
+    // continuously creates element
     const domElement = document.createElement(reactElement.type);
     domElement.innerHTML = reactElement.children;
     for(const prop in reactElement.props){
