@@ -4,12 +4,19 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  let counter = 15;
+  let [counter, setCounter] = useState(1);
 
   const addValue = () => {
     // console.log(`Value Added ${Math.floor(Math.random()*3)}`);
-    console.log("clicked", counter);
+    console.log("added at", counter);
     counter += 1;
+    setCounter(counter);
+  };
+
+  const remValue = () => {
+    console.log("removed at", counter);
+    counter -= 1;
+    setCounter(counter);
   };
 
   return (
@@ -17,9 +24,10 @@ function App() {
       <h1>
         Valay <sub>do</sub> react
       </h1>
+      <h2>Counter is {counter}</h2>
       <button onClick={addValue}>Add Value {counter}</button>
       <br />
-      <button>Remove Value {counter}</button>
+      <button onClick={remValue}>Remove Value {counter}</button>
     </>
   );
 }
