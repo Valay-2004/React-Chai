@@ -12,6 +12,7 @@ function App() {
       <h1 className="flex bg-green-400 p-4 rounded-xl shadow-lg text-black mb-5">
         Tailwind CSS
       </h1>
+      <Card username="Valay"/>
       <Card />
     </>
   );

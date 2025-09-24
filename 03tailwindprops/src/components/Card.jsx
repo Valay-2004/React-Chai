@@ -1,4 +1,6 @@
 export default function Card(props) {
+  console.log("props", props);
+  
   return (
     <div className="md:max-w-sm w-full p-6 rounded-xl shadow-xl bg-black border border-zinc-800 hover:border-white transition-all duration-300 hover:transform hover:scale-105 group">
       <div className="relative overflow-hidden rounded-lg mb-6">
