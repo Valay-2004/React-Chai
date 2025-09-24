@@ -13,7 +13,7 @@ function App() {
         Tailwind CSS
       </h1>
       <Card username="Valay"/>
-      <Card />
+      <Card username="Rupal"/>
     </>
   );
 }
