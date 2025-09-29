@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const [length, setLength] = useState(0);
@@ -28,12 +28,23 @@ function App() {
         <p hidden style={{ textAlign: "center", marginTop: 10 }}>
           Valay is Here{" "}
         </p>
-        <h1 className="text-4xl text-center text-black mt-10">Password Generator</h1>
+        <h1 className="text-4xl text-center text-black mt-10">
+          Password Generator
+        </h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
-          <input type="text" 
+          <input
+            type="text"
+            value={password}
+            className="outline-none w-full py-1 px-3"
+            placeholder="Password"
+            readOnly
           />
+          <button
+          className="outline-none bg-blue-700 text-white px-3py0.5
+          shrink-0">
+            copy
+          </button>
         </div>
-
       </div>
     </>
   );
