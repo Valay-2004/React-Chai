@@ -43,10 +43,9 @@ function App() {
             readOnly
           />
           <button
-            className="outline-none bg-blue-700 text-white px-3py0.5
+            className="outline-none bg-blue-700 text-white px-3 py-0.5
           shrink-0"
-          >
-            copy
+          >copy
           </button>
         </div>
         <div className="flex text-sm gap-x-2">
