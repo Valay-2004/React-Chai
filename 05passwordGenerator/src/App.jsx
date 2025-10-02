@@ -7,6 +7,9 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
+  // change copy -> copied when clicked variable
+  const [copied, setCopied] = useState(false);
+
   //useRef hook
   const passwordRef = useRef(null);
 
@@ -29,7 +32,13 @@ function App() {
     passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0, 101);
     window.navigator.clipboard.writeText(password);
+
+    //change the button text 
+    setCopied(true);
+    // reset back to "copy" after 2s 
+    setTimeout(() => setCopied(false), 1000);
   }, [password]);
+
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
@@ -56,7 +65,7 @@ function App() {
             className="outline-none bg-blue-700 text-white px-3 py-0.5
           shrink-0"
           onClick={copyPasswordToClipboard}
-          >copy
+          >{copied ? "copied" : "copy"}
           </button>
         </div>
         <div className="flex text-sm gap-x-2">
