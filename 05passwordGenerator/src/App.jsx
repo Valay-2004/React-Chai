@@ -25,13 +25,14 @@ function App() {
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
+  
   return (
     <>
-      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-500 bg-gray-700">
+      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-orange-500 bg-gray-700">
         <p hidden style={{ textAlign: "center", marginTop: 10 }}>
           Valay is Here{" "}
         </p>
-        <h1 className="text-4xl text-center text-black mt-10">
+        <h1 className="text-center text-black my-3">
           Password Generator
         </h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
