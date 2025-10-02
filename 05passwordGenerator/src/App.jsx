@@ -7,6 +7,9 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
+  //useRef hook
+  const passwordRef = useRef(null);
+
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -32,7 +35,7 @@ function App() {
         <p hidden style={{ textAlign: "center", marginTop: 10 }}>
           Valay is Here{" "}
         </p>
-        <h1 className="text-center text-black my-3">
+        <h1 className="text-center text-white my-3">
           Password Generator
         </h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
@@ -42,10 +45,12 @@ function App() {
             className="outline-none w-full py-1 px-3"
             placeholder="Password"
             readOnly
+            ref={passwordRef}
           />
           <button
             className="outline-none bg-blue-700 text-white px-3 py-0.5
           shrink-0"
+          onClick={copyPasswordToClipboard}
           >copy
           </button>
         </div>
