@@ -12,6 +12,17 @@ function App() {
   const currencyInfo = useCurrencyInfo(from);
   const options = Object.keys(currencyInfo);
 
+  const swap = () => {
+    setFrom(to);
+    setTo(from);
+    setAmount(convertedAmount);
+    setConvertedAmount(setAmount);
+  };
+
+  const convert = () => {
+    setConvertedAmount(amount * currencyInfo);
+  };
+
   return (
     <>
       <h1 className="text-3xl bg-orange-500 p-4">Currency Converter</h1>
