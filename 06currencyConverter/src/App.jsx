@@ -26,20 +26,20 @@ function App() {
 
   return (
     <div
-      className="w-full h-screen flex flex-wrap bg-cover bg-no-repeat"
+      className="w-full h-screen flex bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url('${BackgroundImage}')`,
       }}
     >
-      <div className="flex-1 flex justify-center items-center">
+      <div className="w-full flex justify-center items-center">
         <img
           src={CurrencyGif}
           alt="Currency Animation"
-          className="w-80 h-70 object-contain backdrop-blur-sm rounded-full"
+          className="w-100 h-100 object-contain backdrop-blur-sm rounded-full"
         />
       </div>
-      <div className="flex-1 flex justify-center items-center mr-8">
-        <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+      <div className="w-full flex justify-center items-center mr-8">
+        <div className="w-full max-w-md mx-auto scale-125 border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
               e.preventDefault();
