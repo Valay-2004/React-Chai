@@ -2,6 +2,7 @@ import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 import BackgroundImage from "./assets/images/BackgroundImage.png";
+import CurrencyGif from "./assets/images/Currency.gif";
 
 function App() {
   const [from, setFrom] = useState("usd");
@@ -25,12 +26,19 @@ function App() {
 
   return (
     <div
-      className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+      className="w-full h-screen flex flex-wrap bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url('${BackgroundImage}')`,
       }}
     >
-      <div className="w-full">
+      <div className="flex-1 flex justify-center items-center">
+        <img
+          src={CurrencyGif}
+          alt="Currency Animation"
+          className="w-80 h-70 object-contain backdrop-blur-sm rounded-full"
+        />
+      </div>
+      <div className="flex-1 flex justify-center items-center mr-8">
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
@@ -43,8 +51,8 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => setAmount(currency)}
                 selectCurrency={from}
+                onCurrencyChange={(currency) => setFrom(currency)}
                 onAmountChange={(amount) => setAmount(amount)}
               />
             </div>
